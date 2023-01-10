@@ -1,0 +1,137 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2012 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 12.1 Build 177 11/07/2012 SJ Web Edition
+# Date created = 09:20:43  December 03, 2022
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		ALU_Main_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY ALU_Main
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:20:43  DECEMBER 03, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION 12.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name VHDL_FILE ALU_Main.vhd
+set_global_assignment -name VHDL_FILE ALU.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE Displays.vhd
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_AB26 -to num_1[7]
+set_location_assignment PIN_AD26 -to num_1[6]
+set_location_assignment PIN_AC26 -to num_1[5]
+set_location_assignment PIN_AB27 -to num_1[4]
+set_location_assignment PIN_AD27 -to num_1[3]
+set_location_assignment PIN_AC27 -to num_1[2]
+set_location_assignment PIN_AC28 -to num_1[1]
+set_location_assignment PIN_AB28 -to num_1[0]
+set_location_assignment PIN_AC25 -to num_2[0]
+set_location_assignment PIN_AB25 -to num_2[1]
+set_location_assignment PIN_AC24 -to num_2[2]
+set_location_assignment PIN_AB24 -to num_2[3]
+set_location_assignment PIN_AB23 -to num_2[4]
+set_location_assignment PIN_AA24 -to num_2[5]
+set_location_assignment PIN_AA23 -to num_2[6]
+set_location_assignment PIN_AA22 -to num_2[7]
+set_location_assignment PIN_Y24 -to opcode[0]
+set_location_assignment PIN_Y23 -to opcode[1]
+set_location_assignment PIN_AA14 -to displays[55]
+set_location_assignment PIN_AG18 -to displays[54]
+set_location_assignment PIN_AF17 -to displays[53]
+set_location_assignment PIN_AH17 -to displays[52]
+set_location_assignment PIN_AG17 -to displays[51]
+set_location_assignment PIN_AE17 -to displays[50]
+set_location_assignment PIN_AD17 -to displays[49]
+set_location_assignment PIN_AC17 -to displays[48]
+set_location_assignment PIN_AA15 -to displays[47]
+set_location_assignment PIN_AB15 -to displays[46]
+set_location_assignment PIN_AB17 -to displays[45]
+set_location_assignment PIN_AA16 -to displays[44]
+set_location_assignment PIN_AB16 -to displays[43]
+set_location_assignment PIN_AA17 -to displays[42]
+set_location_assignment PIN_AH18 -to displays[41]
+set_location_assignment PIN_AF18 -to displays[40]
+set_location_assignment PIN_AG19 -to displays[39]
+set_location_assignment PIN_AH19 -to displays[38]
+set_location_assignment PIN_AB18 -to displays[37]
+set_location_assignment PIN_AC18 -to displays[36]
+set_location_assignment PIN_AD18 -to displays[35]
+set_location_assignment PIN_AE18 -to displays[34]
+set_location_assignment PIN_AF19 -to displays[33]
+set_location_assignment PIN_AE19 -to displays[32]
+set_location_assignment PIN_AH21 -to displays[31]
+set_location_assignment PIN_AG21 -to displays[30]
+set_location_assignment PIN_AA19 -to displays[29]
+set_location_assignment PIN_AB19 -to displays[28]
+set_location_assignment PIN_Y19 -to displays[27]
+set_location_assignment PIN_AF23 -to displays[26]
+set_location_assignment PIN_AD24 -to displays[25]
+set_location_assignment PIN_AA21 -to displays[24]
+set_location_assignment PIN_AB20 -to displays[23]
+set_location_assignment PIN_U21 -to displays[22]
+set_location_assignment PIN_V21 -to displays[21]
+set_location_assignment PIN_W28 -to displays[20]
+set_location_assignment PIN_W27 -to displays[19]
+set_location_assignment PIN_Y26 -to displays[18]
+set_location_assignment PIN_W26 -to displays[17]
+set_location_assignment PIN_Y25 -to displays[16]
+set_location_assignment PIN_AA26 -to displays[15]
+set_location_assignment PIN_AA25 -to displays[14]
+set_location_assignment PIN_U24 -to displays[13]
+set_location_assignment PIN_U23 -to displays[12]
+set_location_assignment PIN_W25 -to displays[11]
+set_location_assignment PIN_W22 -to displays[10]
+set_location_assignment PIN_W21 -to displays[9]
+set_location_assignment PIN_Y22 -to displays[8]
+set_location_assignment PIN_M24 -to displays[7]
+set_location_assignment PIN_H22 -to displays[6]
+set_location_assignment PIN_J22 -to displays[5]
+set_location_assignment PIN_L25 -to displays[4]
+set_location_assignment PIN_L26 -to displays[3]
+set_location_assignment PIN_E17 -to displays[2]
+set_location_assignment PIN_F22 -to displays[1]
+set_location_assignment PIN_G18 -to displays[0]
+set_location_assignment PIN_G19 -to carry_out
+set_location_assignment PIN_M21 -to btn_2
+set_location_assignment PIN_M23 -to btn_1
+set_location_assignment PIN_N21 -to btn_3
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

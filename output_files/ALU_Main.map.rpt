@@ -1,0 +1,1122 @@
+Analysis & Synthesis report for ALU_Main
+Wed Jan 04 16:56:55 2023
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jan 04 16:56:55 2023    ;
+; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Revision Name                      ; ALU_Main                                 ;
+; Top-level Entity Name              ; ALU_Main                                 ;
+; Family                             ; Cyclone IV E                             ;
+; Total logic elements               ; 398                                      ;
+;     Total combinational functions  ; 398                                      ;
+;     Dedicated logic registers      ; 0                                        ;
+; Total registers                    ; 0                                        ;
+; Total pins                         ; 78                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; ALU_Main           ; ALU_Main           ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
+; ALU_Main.vhd                     ; yes             ; User VHDL File  ; C:/Users/rodri/Documents/Arquitectura/ALU_Main/ALU_Main.vhd ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File  ; C:/Users/rodri/Documents/Arquitectura/ALU_Main/ALU.vhd      ;         ;
+; Displays.vhd                     ; yes             ; User VHDL File  ; C:/Users/rodri/Documents/Arquitectura/ALU_Main/Displays.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 398   ;
+;                                             ;       ;
+; Total combinational functions               ; 398   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 89    ;
+;     -- 3 input functions                    ; 161   ;
+;     -- <=2 input functions                  ; 148   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 391   ;
+;     -- arithmetic mode                      ; 7     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 78    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out                             ; 80    ;
+; Total fan-out                               ; 1201  ;
+; Average fan-out                             ; 1.92  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |ALU_Main                  ; 398 (398)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 78   ; 0            ; |ALU_Main           ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; partial_m1_0_                                        ; partial_m1_7_       ; yes                    ;
+; partial_sum_0_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m1_1_                                        ; partial_m1_7_       ; yes                    ;
+; partial_sum_1_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m1_2_                                        ; partial_m1_7_       ; yes                    ;
+; partial_sum_2_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m1_3_                                        ; partial_m1_7_       ; yes                    ;
+; partial_sum_3_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m1_4_                                        ; partial_m1_7_       ; yes                    ;
+; partial_sum_4_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m1_5_                                        ; partial_m1_7_       ; yes                    ;
+; partial_sum_5_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m1_6_                                        ; partial_m1_7_       ; yes                    ;
+; partial_sum_6_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m1_7_                                        ; partial_m1_7_       ; yes                    ;
+; partial_sum_7_                                       ; partial_m1_7_       ; yes                    ;
+; displays[0]$latch                                    ; aux_carry[7]        ; yes                    ;
+; displays[1]$latch                                    ; aux_carry[7]        ; yes                    ;
+; displays[2]$latch                                    ; aux_carry[7]        ; yes                    ;
+; displays[3]$latch                                    ; aux_carry[7]        ; yes                    ;
+; displays[4]$latch                                    ; aux_carry[7]        ; yes                    ;
+; displays[5]$latch                                    ; aux_carry[7]        ; yes                    ;
+; displays[6]$latch                                    ; aux_carry[7]        ; yes                    ;
+; displays[7]$latch                                    ; aux_carry[7]        ; yes                    ;
+; displays[8]$latch                                    ; aux_carry[7]        ; yes                    ;
+; displays[9]$latch                                    ; aux_carry[7]        ; yes                    ;
+; displays[10]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[11]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[12]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[13]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[14]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[15]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[16]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[17]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[18]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[19]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[20]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[21]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[22]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[23]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[24]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[25]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[26]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[27]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[33]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[41]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[48]$latch                                   ; aux_carry[7]        ; yes                    ;
+; displays[55]$latch                                   ; aux_carry[7]        ; yes                    ;
+; partial_sum_8_                                       ; partial_m1_7_       ; yes                    ;
+; partial_sum_9_                                       ; partial_m1_7_       ; yes                    ;
+; partial_sum_10_                                      ; partial_m1_7_       ; yes                    ;
+; partial_sum_11_                                      ; partial_m1_7_       ; yes                    ;
+; partial_sum_12_                                      ; partial_m1_7_       ; yes                    ;
+; partial_sum_13_                                      ; partial_m1_7_       ; yes                    ;
+; partial_sum_14_                                      ; partial_m1_7_       ; yes                    ;
+; partial_sum_15_                                      ; partial_m1_7_       ; yes                    ;
+; partial_m2_1_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m2_2_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m2_3_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m2_4_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m2_5_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m2_6_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m2_7_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m2_8_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m3_2_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m3_3_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m3_4_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m3_5_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m3_6_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m3_7_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m3_8_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m3_9_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m4_3_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m4_4_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m4_5_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m4_6_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m4_7_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m4_8_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m4_9_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m4_10_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m5_4_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m5_5_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m5_6_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m5_7_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m5_8_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m5_9_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m5_10_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m5_11_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m6_5_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m6_6_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m6_7_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m6_8_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m6_9_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m6_10_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m6_11_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m6_12_                                       ; partial_m1_7_       ; yes                    ;
+; partial_m7_6_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m7_7_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m7_8_                                        ; partial_m1_7_       ; yes                    ;
+; partial_m7_9_                                        ; partial_m1_7_       ; yes                    ;
+; Number of user-specified and inferred latches = 142  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |ALU_Main|aux_carry[7]     ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; No         ; |ALU_Main|aux_result[3]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
+    Info: Processing started: Wed Jan 04 16:56:53 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU_Main -c ALU_Main
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file alu_main.vhd
+    Info (12022): Found design unit 1: ALU_Main-alu_proc
+    Info (12023): Found entity 1: ALU_Main
+Info (12021): Found 2 design units, including 0 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU
+    Info (12022): Found design unit 2: ALU-body
+Info (12021): Found 2 design units, including 0 entities, in source file displays.vhd
+    Info (12022): Found design unit 1: Displays
+    Info (12022): Found design unit 2: Displays-body
+Info (12127): Elaborating entity "ALU_Main" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at ALU_Main.vhd(25): used implicit default value for signal "carry_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10492): VHDL Process Statement warning at ALU_Main.vhd(64): signal "aux_carry_16bits" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ALU_Main.vhd(76): signal "state_register" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ALU_Main.vhd(101): signal "state_register" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "aux_carry", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "aux_carry_16bits", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "aux_result", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "state_register", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "flag_carry_aux", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "partial_m1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "partial_m2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "partial_m3", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "partial_m4", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "partial_m5", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "partial_m6", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "partial_m7", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "partial_m8", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "partial_sum", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU_Main.vhd(37): inferring latch(es) for signal or variable "displays", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "displays[0]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[1]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[2]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[3]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[4]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[5]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[6]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[7]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[8]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[9]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[10]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[11]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[12]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[13]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[14]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[15]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[16]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[17]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[18]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[19]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[20]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[21]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[22]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[23]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[24]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[25]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[26]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[27]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[28]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[29]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[30]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[31]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[32]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[33]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[34]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[35]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[36]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[37]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[38]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[39]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[40]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[41]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[42]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[43]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[44]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[45]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[46]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[47]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[48]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[49]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[50]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[51]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[52]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[53]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[54]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "displays[55]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_0_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_1_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_2_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_3_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_4_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_5_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_6_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_7_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_8_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_9_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_10_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_11_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_12_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_13_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_14_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_sum_15_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m8_7_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m8_8_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m8_9_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m8_10_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m8_11_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m8_12_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m8_13_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m8_14_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m7_6_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m7_7_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m7_8_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m7_9_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m7_10_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m7_11_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m7_12_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m7_13_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m6_5_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m6_6_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m6_7_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m6_8_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m6_9_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m6_10_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m6_11_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m6_12_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m5_4_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m5_5_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m5_6_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m5_7_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m5_8_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m5_9_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m5_10_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m5_11_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m4_3_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m4_4_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m4_5_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m4_6_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m4_7_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m4_8_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m4_9_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m4_10_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m3_2_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m3_3_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m3_4_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m3_5_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m3_6_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m3_7_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m3_8_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m3_9_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m2_1_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m2_2_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m2_3_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m2_4_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m2_5_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m2_6_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m2_7_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m2_8_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m1_0_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m1_1_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m1_2_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m1_3_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m1_4_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m1_5_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m1_6_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "partial_m1_7_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "flag_carry_aux_0_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "flag_carry_aux_1_" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "state_register[0]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "state_register[1]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "state_register[2]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "state_register[3]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[0]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[1]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[2]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[3]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[4]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[5]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[6]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[7]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[8]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[9]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[10]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[11]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[12]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[13]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[14]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_result[15]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[0]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[1]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[2]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[3]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[4]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[5]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[6]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[7]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[8]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[9]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[10]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[11]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[12]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[13]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[14]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry_16bits[15]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry[0]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry[1]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry[2]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry[3]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry[4]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry[5]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry[6]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry[7]" at ALU_Main.vhd(37)
+Info (10041): Inferred latch for "aux_carry[8]" at ALU_Main.vhd(37)
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[1]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[2]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[3]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[4]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[5]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[6]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[7]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[8]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[9]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[10]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[11]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[12]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[13]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[14]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[15]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[16]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[17]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[18]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[19]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[20]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[21]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[22]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[23]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[24]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[25]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[26]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[27]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[28]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[31]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[32]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[33]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[36]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[37]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[39]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[40]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[41]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[44]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[45]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[46]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[48]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[51]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[53]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "displays[55]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_sum_8_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_sum_9_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_sum_10_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_sum_11_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_sum_12_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_sum_13_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_sum_14_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_sum_15_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m2_1_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m2_2_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m2_3_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m2_4_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m2_5_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m2_6_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m2_7_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m2_8_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m3_2_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m3_3_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m3_4_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m3_5_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m3_6_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m3_7_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m3_8_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m3_9_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m4_3_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m4_4_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m4_5_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m4_6_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m4_7_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m4_8_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m4_9_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m4_10_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m5_4_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m5_5_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m5_6_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m5_7_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m5_8_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m5_9_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m5_10_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m5_11_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m6_5_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m6_6_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m6_7_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m6_8_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m6_9_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m6_10_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m6_11_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m6_12_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m7_6_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m7_7_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m7_8_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m7_9_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m7_10_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m7_11_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m7_12_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m7_13_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m8_7_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m8_8_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m8_9_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m8_10_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m8_11_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m8_12_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m8_13_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.partial_m8_14_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.flag_carry_aux_1_" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "global.bp.work.ALU.flag_carry_aux_0_" and its non-tri-state driver.
+Warning (13039): The following bidir pins have no drivers
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m1_8_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m1_9_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m1_10_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m1_11_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m1_12_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m1_13_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m1_14_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m1_15_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m2_0_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m2_9_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m2_10_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m2_11_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m2_12_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m2_13_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m2_14_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m2_15_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m3_0_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m3_1_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m3_10_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m3_11_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m3_12_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m3_13_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m3_14_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m3_15_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m4_0_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m4_1_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m4_2_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m4_11_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m4_12_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m4_13_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m4_14_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m4_15_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m5_0_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m5_1_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m5_2_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m5_3_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m5_12_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m5_13_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m5_14_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m5_15_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m6_0_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m6_1_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m6_2_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m6_3_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m6_4_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m6_13_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m6_14_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m6_15_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m7_0_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m7_1_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m7_2_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m7_3_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m7_4_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m7_5_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m7_14_" has no driver
+    Warning (13040): Bidir "global.bp.work.ALU.partial_m7_15_" has no driver
+    Warning (13040): Bidir "num_1[0]" has no driver
+    Warning (13040): Bidir "num_1[1]" has no driver
+    Warning (13040): Bidir "num_1[2]" has no driver
+    Warning (13040): Bidir "num_1[3]" has no driver
+    Warning (13040): Bidir "num_1[4]" has no driver
+    Warning (13040): Bidir "num_1[5]" has no driver
+    Warning (13040): Bidir "num_1[6]" has no driver
+    Warning (13040): Bidir "num_1[7]" has no driver
+    Warning (13040): Bidir "num_2[0]" has no driver
+    Warning (13040): Bidir "num_2[1]" has no driver
+    Warning (13040): Bidir "num_2[2]" has no driver
+    Warning (13040): Bidir "num_2[3]" has no driver
+    Warning (13040): Bidir "num_2[4]" has no driver
+    Warning (13040): Bidir "num_2[5]" has no driver
+    Warning (13040): Bidir "num_2[6]" has no driver
+    Warning (13040): Bidir "num_2[7]" has no driver
+    Warning (13040): Bidir "partial_m8_0_" has no driver
+    Warning (13040): Bidir "partial_m8_1_" has no driver
+    Warning (13040): Bidir "partial_m8_2_" has no driver
+    Warning (13040): Bidir "partial_m8_3_" has no driver
+    Warning (13040): Bidir "partial_m8_4_" has no driver
+    Warning (13040): Bidir "partial_m8_5_" has no driver
+    Warning (13040): Bidir "partial_m8_6_" has no driver
+    Warning (13040): Bidir "partial_m8_15_" has no driver
+Warning (13032): The following tri-state nodes are fed by constants
+    Warning (13033): The pin "displays[29]" is fed by VCC
+    Warning (13033): The pin "displays[30]" is fed by VCC
+    Warning (13033): The pin "displays[34]" is fed by VCC
+    Warning (13033): The pin "displays[35]" is fed by VCC
+    Warning (13033): The pin "displays[38]" is fed by VCC
+    Warning (13033): The pin "displays[42]" is fed by VCC
+    Warning (13033): The pin "displays[43]" is fed by VCC
+    Warning (13033): The pin "displays[47]" is fed by VCC
+    Warning (13033): The pin "displays[49]" is fed by VCC
+    Warning (13033): The pin "displays[50]" is fed by VCC
+    Warning (13033): The pin "displays[52]" is fed by VCC
+    Warning (13033): The pin "displays[54]" is fed by VCC
+Info (13060): One or more bidirs are fed by always enabled tri-state buffers
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_sum_8_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_sum_9_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_sum_10_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_sum_11_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_sum_12_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_sum_13_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_sum_14_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_sum_15_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_m8_7_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_m8_8_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_m8_9_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_m8_10_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_m8_11_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_m8_12_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_m8_13_" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "global.bp.work.ALU.partial_m8_14_" is moved to its source
+Warning (13012): Latch aux_result[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_result[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch state_register[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch state_register[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_carry[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_carry[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_carry[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_carry[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_carry[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_carry[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_carry[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13012): Latch aux_carry[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal btn_1
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "displays[0]~synth"
+    Warning (13010): Node "displays[1]~synth"
+    Warning (13010): Node "displays[2]~synth"
+    Warning (13010): Node "displays[3]~synth"
+    Warning (13010): Node "displays[4]~synth"
+    Warning (13010): Node "displays[5]~synth"
+    Warning (13010): Node "displays[6]~synth"
+    Warning (13010): Node "displays[7]~synth"
+    Warning (13010): Node "displays[8]~synth"
+    Warning (13010): Node "displays[9]~synth"
+    Warning (13010): Node "displays[10]~synth"
+    Warning (13010): Node "displays[11]~synth"
+    Warning (13010): Node "displays[12]~synth"
+    Warning (13010): Node "displays[13]~synth"
+    Warning (13010): Node "displays[14]~synth"
+    Warning (13010): Node "displays[15]~synth"
+    Warning (13010): Node "displays[16]~synth"
+    Warning (13010): Node "displays[17]~synth"
+    Warning (13010): Node "displays[18]~synth"
+    Warning (13010): Node "displays[19]~synth"
+    Warning (13010): Node "displays[20]~synth"
+    Warning (13010): Node "displays[21]~synth"
+    Warning (13010): Node "displays[22]~synth"
+    Warning (13010): Node "displays[23]~synth"
+    Warning (13010): Node "displays[24]~synth"
+    Warning (13010): Node "displays[25]~synth"
+    Warning (13010): Node "displays[26]~synth"
+    Warning (13010): Node "displays[27]~synth"
+    Warning (13010): Node "displays[28]~synth"
+    Warning (13010): Node "displays[29]~synth"
+    Warning (13010): Node "displays[30]~synth"
+    Warning (13010): Node "displays[31]~synth"
+    Warning (13010): Node "displays[32]~synth"
+    Warning (13010): Node "displays[33]~synth"
+    Warning (13010): Node "displays[34]~synth"
+    Warning (13010): Node "displays[35]~synth"
+    Warning (13010): Node "displays[36]~synth"
+    Warning (13010): Node "displays[37]~synth"
+    Warning (13010): Node "displays[38]~synth"
+    Warning (13010): Node "displays[39]~synth"
+    Warning (13010): Node "displays[40]~synth"
+    Warning (13010): Node "displays[41]~synth"
+    Warning (13010): Node "displays[42]~synth"
+    Warning (13010): Node "displays[43]~synth"
+    Warning (13010): Node "displays[44]~synth"
+    Warning (13010): Node "displays[45]~synth"
+    Warning (13010): Node "displays[46]~synth"
+    Warning (13010): Node "displays[47]~synth"
+    Warning (13010): Node "displays[48]~synth"
+    Warning (13010): Node "displays[49]~synth"
+    Warning (13010): Node "displays[50]~synth"
+    Warning (13010): Node "displays[51]~synth"
+    Warning (13010): Node "displays[52]~synth"
+    Warning (13010): Node "displays[53]~synth"
+    Warning (13010): Node "displays[54]~synth"
+    Warning (13010): Node "displays[55]~synth"
+    Warning (13010): Node "partial_sum_8_~synth"
+    Warning (13010): Node "partial_sum_9_~synth"
+    Warning (13010): Node "partial_sum_10_~synth"
+    Warning (13010): Node "partial_sum_11_~synth"
+    Warning (13010): Node "partial_sum_12_~synth"
+    Warning (13010): Node "partial_sum_13_~synth"
+    Warning (13010): Node "partial_sum_14_~synth"
+    Warning (13010): Node "partial_sum_15_~synth"
+    Warning (13010): Node "partial_m2_1_~synth"
+    Warning (13010): Node "partial_m2_2_~synth"
+    Warning (13010): Node "partial_m2_3_~synth"
+    Warning (13010): Node "partial_m2_4_~synth"
+    Warning (13010): Node "partial_m2_5_~synth"
+    Warning (13010): Node "partial_m2_6_~synth"
+    Warning (13010): Node "partial_m2_7_~synth"
+    Warning (13010): Node "partial_m2_8_~synth"
+    Warning (13010): Node "partial_m3_2_~synth"
+    Warning (13010): Node "partial_m3_3_~synth"
+    Warning (13010): Node "partial_m3_4_~synth"
+    Warning (13010): Node "partial_m3_5_~synth"
+    Warning (13010): Node "partial_m3_6_~synth"
+    Warning (13010): Node "partial_m3_7_~synth"
+    Warning (13010): Node "partial_m3_8_~synth"
+    Warning (13010): Node "partial_m3_9_~synth"
+    Warning (13010): Node "partial_m4_3_~synth"
+    Warning (13010): Node "partial_m4_4_~synth"
+    Warning (13010): Node "partial_m4_5_~synth"
+    Warning (13010): Node "partial_m4_6_~synth"
+    Warning (13010): Node "partial_m4_7_~synth"
+    Warning (13010): Node "partial_m4_8_~synth"
+    Warning (13010): Node "partial_m4_9_~synth"
+    Warning (13010): Node "partial_m4_10_~synth"
+    Warning (13010): Node "partial_m5_4_~synth"
+    Warning (13010): Node "partial_m5_5_~synth"
+    Warning (13010): Node "partial_m5_6_~synth"
+    Warning (13010): Node "partial_m5_7_~synth"
+    Warning (13010): Node "partial_m5_8_~synth"
+    Warning (13010): Node "partial_m5_9_~synth"
+    Warning (13010): Node "partial_m5_10_~synth"
+    Warning (13010): Node "partial_m5_11_~synth"
+    Warning (13010): Node "partial_m6_5_~synth"
+    Warning (13010): Node "partial_m6_6_~synth"
+    Warning (13010): Node "partial_m6_7_~synth"
+    Warning (13010): Node "partial_m6_8_~synth"
+    Warning (13010): Node "partial_m6_9_~synth"
+    Warning (13010): Node "partial_m6_10_~synth"
+    Warning (13010): Node "partial_m6_11_~synth"
+    Warning (13010): Node "partial_m6_12_~synth"
+    Warning (13010): Node "partial_m7_6_~synth"
+    Warning (13010): Node "partial_m7_7_~synth"
+    Warning (13010): Node "partial_m7_8_~synth"
+    Warning (13010): Node "partial_m7_9_~synth"
+    Warning (13010): Node "partial_m7_10_~synth"
+    Warning (13010): Node "partial_m7_11_~synth"
+    Warning (13010): Node "partial_m7_12_~synth"
+    Warning (13010): Node "partial_m7_13_~synth"
+    Warning (13010): Node "partial_m8_7_~synth"
+    Warning (13010): Node "partial_m8_8_~synth"
+    Warning (13010): Node "partial_m8_9_~synth"
+    Warning (13010): Node "partial_m8_10_~synth"
+    Warning (13010): Node "partial_m8_11_~synth"
+    Warning (13010): Node "partial_m8_12_~synth"
+    Warning (13010): Node "partial_m8_13_~synth"
+    Warning (13010): Node "partial_m8_14_~synth"
+    Warning (13010): Node "flag_carry_aux_1_~synth"
+    Warning (13010): Node "flag_carry_aux_0_~synth"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "carry_out" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (35026): Attempting to remove 130 I/O cell(s) that do not connect to top-level pins or have illegal connectivity
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_sum_8_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_sum_9_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_sum_10_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_sum_11_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_sum_12_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_sum_13_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_sum_14_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_sum_15_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_1_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_2_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_3_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_4_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_5_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_6_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_7_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_8_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_2_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_3_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_4_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_5_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_6_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_7_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_9_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_3_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_4_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_8_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_5_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_14_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_15_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m1_12_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m1_11_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m1_10_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m1_9_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m1_8_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m1_13_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m1_14_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m1_15_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_0_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_9_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_10_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_11_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_12_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_13_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_14_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m2_15_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_0_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_1_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_10_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_11_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_12_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_13_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_14_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m3_15_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_0_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_1_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_2_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_11_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_12_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_13_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_14_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_15_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_0_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_1_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_2_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_3_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_12_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_13_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_14_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_15_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_0_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_1_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_2_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_3_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_4_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_13_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_14_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_15_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_0_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_1_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_2_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_3_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_4_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_5_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_6_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_7_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_8_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_9_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m4_10_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_4_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_5_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_6_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_7_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_13_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_14_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.flag_carry_aux_1_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_15_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.flag_carry_aux_0_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_8_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_1_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_3_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_2_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_5_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_11_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_7_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_5_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_4_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_6_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_6_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_10_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_9_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_12_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_11_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_10_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_7_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_8_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_9_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m5_8_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_9_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_10_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_11_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m6_12_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_6_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_7_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_8_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_10_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_11_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_12_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_13_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m7_9_~output"
+    Info (35027): Removed I/O cell "global.bp.work.ALU.partial_m8_0_~output"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "btn_3"
+Info (21057): Implemented 476 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21060): Implemented 72 bidirectional pins
+    Info (21061): Implemented 398 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 404 warnings
+    Info: Peak virtual memory: 4636 megabytes
+    Info: Processing ended: Wed Jan 04 16:56:55 2023
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
